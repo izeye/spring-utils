@@ -24,22 +24,22 @@ import org.springframework.web.servlet.ModelAndView;
 import org.w3c.dom.Document;
 
 import com.izeye.util.XmlUtils;
-import com.izeye.util.spring.web.servlet.view.DocumentXmlView;
+import com.izeye.util.spring.web.servlet.view.Document2XmlView;
 
 /**
- * {@link Controller} for testing {@link DocumentXmlView}.
+ * {@link Controller} for testing {@link Document2XmlView}.
  *
  * @author Johnny Lim
  */
 @Controller
 @RequestMapping(path = "/test/xml")
-public class DocumentXmlViewTestController {
+public class Document2XmlViewTestController {
 
 	@GetMapping("/persons")
 	public ModelAndView persons() {
 		String xml = "<persons><person><id>1</id><personName><firstName>Johnny</firstName><lastName>Lim</lastName></personName><age>20</age></person></persons>";
 		Document document = XmlUtils.xml2Document(xml);
-		return new ModelAndView(new DocumentXmlView(document));
+		return new ModelAndView(new Document2XmlView(document));
 	}
 
 }

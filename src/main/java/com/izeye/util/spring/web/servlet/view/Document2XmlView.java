@@ -34,11 +34,11 @@ import com.izeye.util.XmlUtils;
  *
  * @author Johnny Lim
  */
-public class DocumentXmlView implements View {
+public class Document2XmlView implements View {
 
 	private final Document document;
 
-	public DocumentXmlView(Document document) {
+	public Document2XmlView(Document document) {
 		this.document = document;
 	}
 
