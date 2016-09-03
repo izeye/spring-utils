@@ -36,6 +36,8 @@ import com.izeye.util.XmlUtils;
  */
 public class Document2XmlView implements View {
 
+	private static final String DEFAULT_CHARSET = "UTF-8";
+
 	private final Document document;
 
 	public Document2XmlView(Document document) {
@@ -52,6 +54,7 @@ public class Document2XmlView implements View {
 			Map<String, ?> model, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		response.setContentType(getContentType());
+		response.setCharacterEncoding(DEFAULT_CHARSET);
 		FileCopyUtils.copy(XmlUtils.document2Xml(document), response.getWriter());
 	}
 
